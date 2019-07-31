@@ -7,9 +7,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name="user-management-service")
+@FeignClient(name="user")
 public interface UserManagementClient {
-    @GetMapping(value="/user/business/login")
+    @GetMapping(value="/user/login")
     ServiceResponse<User> login(@RequestParam("email") String email);
 
 }
