@@ -1,7 +1,7 @@
 package com.taha.boilerplate.user.service;
 
-import com.netpace.bgc.um.dto.SignIn;
 import com.taha.boilerplate.user.domain.User;
+import com.taha.boilerplate.user.dto.SignIn;
 
 public interface UserService {
     User login(SignIn signIn);

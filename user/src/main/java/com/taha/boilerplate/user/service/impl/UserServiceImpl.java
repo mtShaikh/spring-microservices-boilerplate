@@ -1,7 +1,7 @@
 package com.taha.boilerplate.user.service.impl;
 
-import com.netpace.bgc.um.dto.SignIn;
 import com.taha.boilerplate.user.domain.User;
+import com.taha.boilerplate.user.dto.SignIn;
 import com.taha.boilerplate.user.exception.IncorrectEmailOrPasswordException;
 import com.taha.boilerplate.user.repository.UserRepository;
 import com.taha.boilerplate.user.service.UserService;

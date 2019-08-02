@@ -1,14 +1,14 @@
 package com.taha.boilerplate.user.domain;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User {
     private int id;
     private String name;
     private String email;
-    private List<Role> rolesList;
+    private Set<Role> roles;
     private String password;
 
 
@@ -39,12 +39,18 @@ public class User {
         this.email = email;
     }
 
-    public List<Role> getRolesList() {
-        return rolesList;
+    @ManyToMany(cascade = { CascadeType.MERGE })
+    @JoinTable(
+            name = "User_Role",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "role_id") }
+    )
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRolesList(List<Role> rolesList) {
-        this.rolesList = rolesList;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
     public String getPassword() {
